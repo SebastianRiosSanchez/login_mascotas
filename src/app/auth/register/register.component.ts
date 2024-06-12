@@ -20,8 +20,7 @@ export class RegisterComponent implements OnInit {
     direccionCliente: ['', Validators.required],
   });
 
-
-  usuario: any = this.registerForm.getRawValue();
+  usuario: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -32,9 +31,13 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  loadInfo() {
+    this.usuario = this.registerForm.getRawValue();
+    this.register(this.usuario);
+  }
+
   register(data: any) {
     if (this.registerForm.valid) {
-      console.log('Usuario: ', this.usuario);
       this.registerService.register(data).subscribe(
         response => {
           console.log('Respuesta: ', response);
