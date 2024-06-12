@@ -37,8 +37,9 @@ export class RegisterUserService {
   }
 
   // Ejemplo de petición POST
-  register(): Observable<any> {
-    return this.http.post<any>('http://localhost:8080/auth/register', this.dataUser);
+  register(data: any): Observable<any> {
+    // return this.http.post<any>('http://localhost:8080/auth/register', this.dataUser);
+    return this.http.post<any>('http://localhost:8080/auth/register', data);
   }
 
 }

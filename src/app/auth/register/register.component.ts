@@ -32,16 +32,14 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  register() {
+  register(data: any) {
     if (this.registerForm.valid) {
       console.log('Usuario: ', this.usuario);
-      this.registerService.register().subscribe(
+      this.registerService.register(data).subscribe(
         response => {
           console.log('Respuesta: ', response);
-          
         }
       );
-
     }
   }
 
