@@ -10,6 +10,10 @@ import { User } from 'src/app/services/auth/user';
 export class DashboardComponent implements OnInit {
   userLoginOn: boolean = false;
   userData?: User;
+
+  nombreMascota: String = 'Roco';
+
+
   constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {

@@ -12,6 +12,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailsComponent } from './pages/details/details.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { PetsComponent } from './pages/pets/pets/pets.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RegisterComponent } from './auth/register/register.component';
     LoginComponent,
     NavComponent,
     DetailsComponent,
-    RegisterComponent
+    RegisterComponent,
+    PetsComponent
   ],
   imports: [
     BrowserModule,
