@@ -1,26 +1,21 @@
-# Angular Login Project
+# Angular Login Mascotas
 
-This project demonstrates how to implement a login functionality in an Angular application.
+Este proyecto almacena el login par aingresar a la plataforma, así como el registro de clientes, mascotas y el agendamiento de citas.
 
 ## Overview
 
-This project showcases the implementation of a login feature in an Angular application. It utilizes Angular's powerful features such as components, services, and routing to create a seamless login experience for users.
+Tecnologías usadas.
 
-Technologies used:
   - Angular
   - TypeScript
   - HTML/CSS
 
-## YouTube Channel
+## Instalación
 
-   For a detailed step-by-step explanation of the login implementation, please visit (https://youtu.be/jkdLRbrJj9M).
+Para instalar el proyecto es necesario seguir los pasos descritos a continuación:
 
-## Installation
-
-Follow these steps to install and run the project:
-
-1. Clone the repository: `git clone https://github.com/irojascorsico/angular-login`
-2. Navigate to the project directory: `cd your-repo`
-3. Install dependencies: `npm install`
-4. Run the application: `ng serve`
-5. Open your browser and visit `http://localhost:4200` to view the application
+1. Clonar el repositorio: `https://github.com/SebastianRiosSanchez/login_mascotas.git`
+2. Dirigirse a la carpeta del proyecto: `cd tu carpeta`
+3. Instalar las dependencias: `npm install`
+4. Correr la aplicación: `ng serve`
+5. Abrir en el navegador `http://localhost:4200` para ver la aplicación y listo. Muchas suerte en tus proyectos.
