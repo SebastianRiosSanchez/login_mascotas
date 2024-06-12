@@ -1,0 +1,29 @@
+<form [formGroup]="loginForm" class="d-flex flex-column align-items-center">
+    <p class="text-danger">{{loginError}}</p>
+    <div class="mb-3 w-50">
+        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <input formControlName="emailCliente" type="email" class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp">
+        <div *ngIf="emailCliente.invalid && (emailCliente.dirty || emailCliente.touched)" class="text-danger">
+            <div *ngIf="emailCliente.errors?.['required']">
+                El Email es requerido.
+            </div>
+            <div *ngIf="emailCliente.errors?.['emailCliente']">
+                El Email debe tener un formato válido.
+            </div>
+        </div>
+    </div>
+    <div class="mb-3 w-50">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input formControlName="passCliente" type="password" class="form-control" id="exampleInputPassword1">
+        <div *ngIf="passCliente.invalid && (passCliente.dirty || passCliente.touched)" class="text-danger">
+            <div *ngIf="passCliente.errors?.['required']">
+                El password es requerido.
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center w-50">
+        <button type="submit" (click)="login()" class="btn btn-primary me-3">Iniciar Sesión</button>
+        <button type="button"  class="btn btn-primary me-3">Registrarse</button>
+    </div>
+</form>
