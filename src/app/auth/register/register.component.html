@@ -1,0 +1,29 @@
+<form [formGroup]="registerForm">
+  <div class="container text-center p-4">
+    <div class="row align-items-start">
+      <div class="col">
+        <label class="form-label">Nombres completos</label>
+        <input formControlName="nombreCliente" type="text" class="form-control" aria-describedby="emailHelp">
+        <label class="form-label">Número de identifiación</label>
+        <input formControlName="ccCliente" type="text" class="form-control" aria-describedby="emailHelp">
+      </div>
+      <div class="col">
+        <label class="form-label">Apellidos completos</label>
+        <input formControlName="apellidoCliente" type="text" class="form-control" aria-describedby="emailHelp">
+        <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+        <input formControlName="emailCliente" type="email" class="form-control" aria-describedby="emailHelp"
+          autocomplete="off">
+      </div>
+      <div class="col">
+        <label class="form-label">Dirección de residencia</label>
+        <input formControlName="direccionCliente" type="text" class="form-control" aria-describedby="emailHelp">
+        <label class="form-label">Contraseña</label>
+        <input formControlName="passCliente" type="password" class="form-control" aria-describedby="emailHelp"
+          autocomplete="new-password">
+      </div>
+    </div>
+    <div class="p-5">
+      <button type="submit" (click)="register()" class="btn btn-primary me-3">Registrarse</button>
+      <button type="submit" class="btn btn-primary me-3">Regresar</button>
+    </div>
+  </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators} from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/auth/login.service';
 import { LoginRequest } from 'src/app/services/auth/loginRequest';
@@ -10,35 +10,34 @@ import { LoginRequest } from 'src/app/services/auth/loginRequest';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginError:string="";
-  loginForm=this.formBuilder.group({
-    emailCliente:['',[Validators.required,Validators.email]],
-    passCliente: ['',Validators.required],
+  loginError: string = "";
+  loginForm = this.formBuilder.group({
+    emailCliente: ['', [Validators.required, Validators.email]],
+    passCliente: ['', Validators.required],
   })
-  constructor(private formBuilder:FormBuilder, private router:Router, private loginService: LoginService) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
 
-  get emailCliente(){
+  get emailCliente() {
     return this.loginForm.controls.emailCliente;
   }
 
-  get passCliente()
-  {
+  get passCliente() {
     return this.loginForm.controls.passCliente;
   }
 
-  login(){
-    if(this.loginForm.valid){
-      this.loginError="";
+  login() {
+    if (this.loginForm.valid) {
+      this.loginError = "";
       this.loginService.login(this.loginForm.value as LoginRequest).subscribe({
         next: (userData) => {
           console.log(userData);
         },
         error: (errorData) => {
           console.error(errorData);
-          this.loginError=errorData;
+          this.loginError = errorData;
         },
         complete: () => {
           console.info("Login completo");
@@ -48,7 +47,7 @@ export class LoginComponent implements OnInit {
       })
 
     }
-    else{
+    else {
       this.loginForm.markAllAsTouched();
       alert("Error al ingresar los datos.");
     }
