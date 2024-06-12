@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
+import { User } from 'src/app/services/auth/user';
+import { RegisterUserService } from 'src/app/services/register/register-user.service';
 
 @Component({
   selector: 'app-register',
@@ -18,8 +20,12 @@ export class RegisterComponent implements OnInit {
     direccionCliente: ['', Validators.required],
   });
 
+
+  usuario: any = this.registerForm.getRawValue();
+
   constructor(
     private formBuilder: FormBuilder,
+    private registerService: RegisterUserService,
     private router: Router
   ) { }
 
@@ -28,10 +34,17 @@ export class RegisterComponent implements OnInit {
 
   register() {
     if (this.registerForm.valid) {
-      console.log('Formulario: ', this.registerForm.value);
+      console.log('Usuario: ', this.usuario);
+      this.registerService.register().subscribe(
+        response => {
+          console.log('Respuesta: ', response);
+          
+        }
+      );
+
     }
-   
   }
+
 
 
 }
