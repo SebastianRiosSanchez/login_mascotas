@@ -32,7 +32,8 @@ import { PetsComponent } from './pages/pets/pets/pets.component';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

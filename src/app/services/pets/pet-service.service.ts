@@ -31,13 +31,21 @@ export class PetServiceService {
       role: "USER"
     }
   }
+  //Headers
+  token = sessionStorage.getItem('token');
+  headers = new HttpHeaders({
+    Authorization: `Bearer ${this.token}`
+  });
 
   //Create
   addNewPet(): Observable<any> {
-    return this.http.post<Pet>('url', this.body);
+    console.log('Toke headers: ', this.headers);
+
+    return this.http.post<Pet>('url', this.body, { headers: this.headers });
   }
   //GetAll
   getPets(): Observable<Pet[]> {
+    console.log('Token headers: ', this.headers);
     return this.http.get<Pet[]>('url');
   }
   //Update
