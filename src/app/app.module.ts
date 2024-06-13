@@ -8,11 +8,14 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './auth/login/login.component';
 import { NavComponent } from './shared/nav/nav.component';
-import {ReactiveFormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DetailsComponent } from './pages/details/details.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { PetsComponent } from './pages/pets/pets/pets.component';
+import { CookieService } from 'ngx-cookie-service';
+import { PetInterceptorInterceptor } from './services/pets/pet-interceptor.interceptor';
+import { ErrorinterceptorService } from './services/auth/errorinterceptor.service';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { PetsComponent } from './pages/pets/pets/pets.component';
     HttpClientModule,
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: PetInterceptorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorinterceptorService, multi: true },
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

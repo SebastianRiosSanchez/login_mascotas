@@ -18,10 +18,23 @@ export class PetsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.loadInfo();
+  }
+
+  loadInfo() {
     this.petService.getPets().subscribe(
-      pets => {
-        this.petList = [...pets];
-      });
+      {
+        next: (response) => {
+          console.log('Response: ', response);
+        },
+        error: (errorData) => {
+          console.log(errorData);
+        },
+        complete: () => {
+          console.log('Completado...');
+        }
+      }
+    );
   }
 
 }

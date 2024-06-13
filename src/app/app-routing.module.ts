@@ -7,6 +7,7 @@ import { PetsComponent } from './pages/pets/pets/pets.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
+  // { path: 'inicio', component: DashboardComponent, canActivate: [nombreGuard] },
   { path: 'inicio', component: DashboardComponent },
   { path: 'iniciar-sesion', component: LoginComponent },
   { path: 'registrarse', component: RegisterComponent },

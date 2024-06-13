@@ -21,11 +21,12 @@ export class LoginService {
   login(credentials: LoginRequest): Observable<any> {
     return this.http.post<any>(environment.urlHost + "auth/login", credentials).pipe(
       tap((userData) => {
-        sessionStorage.setItem("token", userData.token);
+        sessionStorage.setItem("token", userData.token); // Almacenamiento de token
         this.currentUserData.next(userData.token);
         this.currentUserLoginOn.next(true);
+        console.log('Response: ', userData);
       }),
-      map((userData) => userData.token),
+      map((userData) => userData),
       catchError(this.handleError)
     );
   }
@@ -51,4 +52,9 @@ export class LoginService {
   get userLoginOn(): Observable<boolean> {
     return this.currentUserLoginOn.asObservable();
   }
+
+  get userToken(): String {
+    return this.currentUserData.value;
+  }
+
 }
