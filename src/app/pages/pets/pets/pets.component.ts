@@ -12,6 +12,8 @@ export class PetsComponent implements OnInit {
 
   credentials: any;
   petList: Pet[] = [];
+  jsonList: any;
+
 
   constructor(
     private petService: PetServiceService
@@ -25,7 +27,8 @@ export class PetsComponent implements OnInit {
     this.petService.getPets().subscribe(
       {
         next: (response) => {
-          console.log('Response: ', response);
+          this.petList = [...response];
+          console.log(this.petList);
         },
         error: (errorData) => {
           console.log(errorData);
@@ -35,6 +38,11 @@ export class PetsComponent implements OnInit {
         }
       }
     );
+  }
+
+  openEditPet() {
+    console.log('Editar mascota');
+
   }
 
 }

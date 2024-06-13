@@ -5,31 +5,29 @@
         <thead>
             <tr>
 
-                <th scope="col">Id</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Raza</th>
                 <th scope="col">Edad(años)</th>
                 <th scope="col">Color(es)</th>
                 <th scope="col">Nombre propietario</th>
-                <!-- <th scope="col">Acciones</th> -->
+                <th scope="col">Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Mark</td>
-                <td>Todas</td>
-                <td>5</td>
-                <td>Amarillo, Blanco. Negro</td>
-                <td>Usuario de prueba 1</td>
+            <tr *ngFor="let pet of petList">
+                <td>{{pet.nombreMascota}}</td>
+                <td>{{pet.razaMascota}}</td>
+                <td>{{pet.edadMascota}}</td>
+                <td>{{pet.colorMascota}}</td>
+                <td>Nombre del propietario</td>
                 <td>
                     <div class="">
-                        <button type="button" class="btn btn-info btn-sm me-2">Editar</button>
+                        <button (click)="openEditPet()" type="button" class="btn btn-info btn-sm me-2">Editar</button>
                         <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
                     </div>
                 </td>
             </tr>
-            <tr>
+            <!-- <tr>
                 <td>2</td>
                 <td>Mark</td>
                 <td>Todas</td>
@@ -56,7 +54,7 @@
                         <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
                     </div>
                 </td>
-            </tr>
+            </tr> -->
         </tbody>
     </table>
 </div>

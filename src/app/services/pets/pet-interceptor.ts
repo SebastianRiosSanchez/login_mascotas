@@ -20,7 +20,7 @@ export class PetInterceptorInterceptor implements HttpInterceptor {
         setHeaders: {
           'Content-Type': 'application/json;charset=utf-8',
           'Accept': 'application/json',
-          'Authorization': ` Bearer Token ${token}`
+          'Authorization': ` Bearer Token${token}`
         }
       });
     }
