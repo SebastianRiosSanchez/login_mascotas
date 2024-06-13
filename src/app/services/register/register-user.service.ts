@@ -36,7 +36,6 @@ export class RegisterUserService {
     direccionCliente: "calle 67a # 40-61"
   }
 
-  // Ejemplo de petición POST
   register(data: any): Observable<any> {
     // return this.http.post<any>('http://localhost:8080/auth/register', this.dataUser);
     return this.http.post<any>('http://localhost:8080/auth/register', data);
