@@ -13,7 +13,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DetailsComponent } from './pages/details/details.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { PetsComponent } from './pages/pets/pets/pets.component';
-import { CookieService } from 'ngx-cookie-service';
+
 import { PetInterceptorInterceptor } from './services/pets/pet-interceptor';
 import { ErrorinterceptorService } from './services/auth/errorinterceptor.service';
 import { DetailpetComponent } from './pages/pets/detailpet/detailpet.component';
@@ -44,7 +44,7 @@ import { DoctorComponent } from './pages/doctor/doctor.component';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: PetInterceptorInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorinterceptorService, multi: true },
-    CookieService
+
   ],
   bootstrap: [AppComponent]
 })
