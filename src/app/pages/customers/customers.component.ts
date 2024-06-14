@@ -8,6 +8,9 @@ import { CustomersService } from 'src/app/services/customers/customers.service';
 })
 export class CustomersComponent implements OnInit {
 
+  customersList: any[] = [];
+
+
   constructor(private customerService: CustomersService) { }
 
   ngOnInit(): void {
@@ -20,7 +23,8 @@ export class CustomersComponent implements OnInit {
     this.customerService.getCustomers().subscribe(
       {
         next: (response) => {
-          console.log('Lista de clientes: ', response);
+          this.customersList = [...response];
+          console.log('Lista de clientes: ', this.customersList);
         },
         error: (errorData) => {
           console.error(errorData);
@@ -30,6 +34,14 @@ export class CustomersComponent implements OnInit {
         }
       }
     );
+  }
+
+  //Método para editar un cliente
+  openEditCustomer() { }
+
+  //Método para eliminar un usuario
+  deleteCustomer(id: number) {
+    this.customerService.deleteCustomer(id);
   }
 
 

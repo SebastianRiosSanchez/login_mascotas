@@ -1,2 +1,60 @@
 <app-nav></app-nav>
-<p>customers works!</p>
+<div class="container">
+    <table class="table table-hover">
+        <caption>Lista de mascotas</caption>
+        <thead>
+            <tr>
+
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">c.c.</th>
+                <th scope="col">email</th>
+                <th scope="col">Dirección residencia</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of customersList">
+                <td>{{customer.nombreCliente}}</td>
+                <td>{{customer.apellidoCliente}}</td>
+                <td>{{customer.ccCliente}}</td>
+                <td>{{customer.emailCliente}}</td>
+                <td>{{customer.direccionCliente}}</td>
+                <td>
+                    <div class="">
+                        <button (click)="openEditCustomer()" type="button" class="btn btn-info btn-sm me-2">Editar</button>
+                        <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
+                    </div>
+                </td>
+            </tr>
+            <!-- <tr>
+                <td>2</td>
+                <td>Mark</td>
+                <td>Todas</td>
+                <td>5</td>
+                <td>Amarillo, Blanco. Negro</td>
+                <td>Usuario de prueba 1</td>
+                <td>
+                    <div class="">
+                        <button type="button" class="btn btn-info btn-sm me-2">Editar</button>
+                        <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Mark</td>
+                <td>Todas</td>
+                <td>5</td>
+                <td>Amarillo, Blanco. Negro</td>
+                <td>Usuario de prueba 1</td>
+                <td>
+                    <div class="">
+                        <button type="button" class="btn btn-info btn-sm me-2">Editar</button>
+                        <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
+                    </div>
+                </td>
+            </tr> -->
+        </tbody>
+    </table>
+</div>
