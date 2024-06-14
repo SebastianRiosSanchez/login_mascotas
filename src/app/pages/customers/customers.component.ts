@@ -11,7 +11,9 @@ export class CustomersComponent implements OnInit {
   customersList: any[] = [];
 
 
-  constructor(private customerService: CustomersService) { }
+  constructor(
+    private customerService: CustomersService,
+  ) { }
 
   ngOnInit(): void {
     //Llamado al método para cargar los datos
@@ -37,7 +39,9 @@ export class CustomersComponent implements OnInit {
   }
 
   //Método para editar un cliente
-  openEditCustomer() { }
+  openEditCustomer() {
+
+  }
 
   //Método para eliminar un usuario
   deleteCustomer(id: number) {

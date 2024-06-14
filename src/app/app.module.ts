@@ -33,7 +33,7 @@ import { DoctorComponent } from './pages/doctor/doctor.component';
     PetsComponent,
     DetailpetComponent,
     CustomersComponent,
-    DoctorComponent
+    DoctorComponent,
   ],
   imports: [
     BrowserModule,
