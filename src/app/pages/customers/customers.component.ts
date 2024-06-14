@@ -38,6 +38,11 @@ export class CustomersComponent implements OnInit {
     );
   }
 
+  //Método para crear cliente
+  addNewCustomer() {
+    
+  }
+  
   //Método para editar un cliente
   openEditCustomer() {
 
