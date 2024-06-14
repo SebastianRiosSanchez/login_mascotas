@@ -1,60 +1,34 @@
 <app-nav></app-nav>
 <div class="container">
-    <table class="table table-hover">
-        <caption>Lista de mascotas</caption>
-        <thead>
-            <tr>
-
-                <th scope="col">Nombre</th>
-                <th scope="col">Raza</th>
-                <th scope="col">Edad(años)</th>
-                <th scope="col">Color(es)</th>
-                <th scope="col">Nombre propietario</th>
-                <th scope="col">Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let pet of petList">
-                <td>{{pet.nombreMascota}}</td>
-                <td>{{pet.razaMascota}}</td>
-                <td>{{pet.edadMascota}}</td>
-                <td>{{pet.colorMascota}}</td>
-                <td>Nombre del propietario</td>
-                <td>
-                    <div class="">
-                        <button (click)="openEditPet()" type="button" class="btn btn-info btn-sm me-2">Editar</button>
-                        <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
-                    </div>
-                </td>
-            </tr>
-            <!-- <tr>
-                <td>2</td>
-                <td>Mark</td>
-                <td>Todas</td>
-                <td>5</td>
-                <td>Amarillo, Blanco. Negro</td>
-                <td>Usuario de prueba 1</td>
-                <td>
-                    <div class="">
-                        <button type="button" class="btn btn-info btn-sm me-2">Editar</button>
-                        <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Mark</td>
-                <td>Todas</td>
-                <td>5</td>
-                <td>Amarillo, Blanco. Negro</td>
-                <td>Usuario de prueba 1</td>
-                <td>
-                    <div class="">
-                        <button type="button" class="btn btn-info btn-sm me-2">Editar</button>
-                        <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
-                    </div>
-                </td>
-            </tr> -->
-        </tbody>
-    </table>
+    <div style="overflow-y: auto; height: 82vh;">
+        <table class="table table-hover">
+            <caption>Lista de mascotas</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Raza</th>
+                    <th scope="col">Edad(años)</th>
+                    <th scope="col">Color(es)</th>
+                    <th scope="col">Nombre propietario</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pet of petList">
+                    <td>{{pet.nombreMascota}}</td>
+                    <td>{{pet.razaMascota}}</td>
+                    <td>{{pet.edadMascota}}</td>
+                    <td>{{pet.colorMascota}}</td>
+                    <td>Nombre del propietario</td>
+                    <td>
+                        <div class="">
+                            <button (click)="openEditPet()" type="button"
+                                class="btn btn-info btn-sm me-2">Editar</button>
+                            <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
