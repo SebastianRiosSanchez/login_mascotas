@@ -6,6 +6,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { PetsComponent } from './pages/pets/pets/pets.component';
 import { CustomersComponent } from './pages/customers/customers.component';
 import { DoctorComponent } from './pages/doctor/doctor.component';
+import { NewCustomerComponent } from './pages/customers/new-customer/new-customer.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
@@ -14,8 +15,9 @@ const routes: Routes = [
   { path: 'iniciar-sesion', component: LoginComponent },
   { path: 'registrarse', component: RegisterComponent },
   { path: 'mascotas', component: PetsComponent },
-  { path: 'clientes', component: CustomersComponent  },
-  { path: 'veterinario', component: DoctorComponent  },
+  { path: 'clientes', component: CustomersComponent },
+  { path: 'crear-cliente', component: NewCustomerComponent },
+  { path: 'veterinario', component: DoctorComponent },
 ];
 
 @NgModule({

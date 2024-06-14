@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, catchError, throwError } from 'rxjs';
-import { Pet } from './pet';
+import { Pet } from '../../interfaces/pet';
 import { environment } from 'src/environments/environment';
 
 @Injectable({

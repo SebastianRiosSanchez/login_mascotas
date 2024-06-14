@@ -19,6 +19,7 @@ import { ErrorinterceptorService } from './services/auth/errorinterceptor.servic
 import { DetailpetComponent } from './pages/pets/detailpet/detailpet.component';
 import { CustomersComponent } from './pages/customers/customers.component';
 import { DoctorComponent } from './pages/doctor/doctor.component';
+import { NewCustomerComponent } from './pages/customers/new-customer/new-customer.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { DoctorComponent } from './pages/doctor/doctor.component';
     DetailpetComponent,
     CustomersComponent,
     DoctorComponent,
+    NewCustomerComponent,
   ],
   imports: [
     BrowserModule,

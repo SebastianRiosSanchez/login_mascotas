@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap/modal/modal';
 import { CustomersService } from 'src/app/services/customers/customers.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class CustomersComponent implements OnInit {
 
   constructor(
     private customerService: CustomersService,
+    private modalServie: NgbModal
   ) { }
 
   ngOnInit(): void {
@@ -40,9 +42,9 @@ export class CustomersComponent implements OnInit {
 
   //Método para crear cliente
   addNewCustomer() {
-    
+
   }
-  
+
   //Método para editar un cliente
   openEditCustomer() {
 
