@@ -14,33 +14,26 @@ export class PetServiceService {
 
   constructor(
     private http: HttpClient,
-    private cookieSvc: CookieService
   ) {
     this.petData = new BehaviorSubject<any>('');
   }
 
   getPets(): Observable<Pet[]> {
-    const token = sessionStorage.getItem("token");
-    if (!token) {
-      console.error("Token no encontrado en sessionStorage");
-      return throwError('Token no encontrado');
-    }
-
-    console.log("El valor almacenado es:", token);
-
-    // const headers = new HttpHeaders().set('Authorization', 'Bearer Token ' + token);
-    const headers = new HttpHeaders().set('Authorization', token);
-
-    console.log('Headers: ', headers);
-
-    return this.http.get<Pet[]>(environment.urlHost + 'mascota', { headers }).pipe(
+    return this.http.get<Pet[]>(`${environment.urlHost}` + 'mascota').pipe(
       catchError((error: any) => {
         console.error("Error al obtener mascotas", error);
         return throwError(error);
       })
     );
   }
-
+  getPetById(id: number): Observable<Pet> {
+    return this.http.get<Pet>(`${environment.urlHost}` + 'mascota/' + `${id}`).pipe(
+      catchError((error: any) => {
+        console.error(`Error al obtener la mascota con el id: ${id}`);
+        return throwError(error);
+      })
+    );
+  }
   // Ejemplo de métodos adicionales
 
   // addNewPet(pet: Pet): Observable<Pet> {

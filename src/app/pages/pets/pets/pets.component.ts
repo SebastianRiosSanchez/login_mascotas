@@ -21,6 +21,7 @@ export class PetsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadInfo();
+    this.getPetByid();
   }
 
   loadInfo() {
@@ -29,6 +30,22 @@ export class PetsComponent implements OnInit {
         next: (response) => {
           this.petList = [...response];
           console.log(this.petList);
+        },
+        error: (errorData) => {
+          console.log(errorData);
+        },
+        complete: () => {
+          console.log('Completado...');
+        }
+      }
+    );
+  }
+
+  getPetByid() {
+    this.petService.getPetById(1).subscribe(
+      {
+        next: (response) => {
+          console.log(response);
         },
         error: (errorData) => {
           console.log(errorData);
