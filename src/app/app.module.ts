@@ -17,6 +17,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { PetInterceptorInterceptor } from './services/pets/pet-interceptor';
 import { ErrorinterceptorService } from './services/auth/errorinterceptor.service';
 import { DetailpetComponent } from './pages/pets/detailpet/detailpet.component';
+import { CustomersComponent } from './pages/customers/customers.component';
+import { DoctorComponent } from './pages/doctor/doctor.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { DetailpetComponent } from './pages/pets/detailpet/detailpet.component';
     DetailsComponent,
     RegisterComponent,
     PetsComponent,
-    DetailpetComponent
+    DetailpetComponent,
+    CustomersComponent,
+    DoctorComponent
   ],
   imports: [
     BrowserModule,
