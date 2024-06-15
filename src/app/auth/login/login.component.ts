@@ -18,11 +18,11 @@ export class LoginComponent implements OnInit {
     passCliente: ['', Validators.required],
   })
   constructor(
-    private formBuilder: FormBuilder, 
-    private router: Router, 
+    private formBuilder: FormBuilder,
+    private router: Router,
     private loginService: LoginService,
     //  private cookieSvc: CookieService
-    ) { }
+  ) { }
 
   ngOnInit(): void {
   }
