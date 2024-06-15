@@ -20,9 +20,7 @@ import { CustomersComponent } from './pages/customers/customers.component';
 import { DoctorComponent } from './pages/doctor/doctor.component';
 import { NewCustomerComponent } from './pages/customers/new-customer/new-customer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
-import { MatFormFieldModule, MatInputModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -49,8 +47,7 @@ import { MatFormFieldModule, MatInputModule } from '@angular/material';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule
+
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: PetInterceptorInterceptor, multi: true },
