@@ -8,7 +8,6 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './auth/login/login.component';
 import { NavComponent } from './shared/nav/nav.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DetailsComponent } from './pages/details/details.component';
 import { RegisterComponent } from './auth/register/register.component';
@@ -20,6 +19,10 @@ import { DetailpetComponent } from './pages/pets/detailpet/detailpet.component';
 import { CustomersComponent } from './pages/customers/customers.component';
 import { DoctorComponent } from './pages/doctor/doctor.component';
 import { NewCustomerComponent } from './pages/customers/new-customer/new-customer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
+import { MatFormFieldModule, MatInputModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,12 @@ import { NewCustomerComponent } from './pages/customers/new-customer/new-custome
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: PetInterceptorInterceptor, multi: true },

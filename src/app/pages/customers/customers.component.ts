@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CustomersService } from 'src/app/services/customers/customers.service';
+import { ModalServiceService } from 'src/app/services/modal/modal-service.service';
+import { NewCustomerComponent } from './new-customer/new-customer.component';
 
 @Component({
   selector: 'app-customers',
   templateUrl: './customers.component.html',
-  styleUrls: ['./customers.component.css']
+  styleUrls: ['./customers.component.css'],
 })
 export class CustomersComponent implements OnInit {
 
@@ -13,6 +16,8 @@ export class CustomersComponent implements OnInit {
 
   constructor(
     private customerService: CustomersService,
+    private router: Router,
+    private modalService: ModalServiceService
   ) { }
 
   ngOnInit(): void {
@@ -40,12 +45,13 @@ export class CustomersComponent implements OnInit {
 
   //Método para crear cliente
   addNewCustomer() {
+    const modalRef = this.modalService.open(NewCustomerComponent);
 
   }
 
   //Método para editar un cliente
   openEditCustomer() {
-
+    console.log('crear un cliente nuevo');
   }
 
   //Método para eliminar un usuario

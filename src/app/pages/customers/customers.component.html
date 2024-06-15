@@ -1,7 +1,7 @@
 <app-nav></app-nav>
 <div class="container">
     <div class="">
-        <button (click)="openEditCustomer()" type="button" class="btn btn-primary btn-sm me-2">Crear cliente</button>
+        <button (click)="addNewCustomer()" type="button" class="btn btn-primary btn-sm me-2">Crear cliente</button>
     </div>
     <div style="height: 82vh; overflow-y: auto;">
         <table class="table table-hover">
@@ -27,6 +27,28 @@
                         <div class="">
                             <button (click)="addNewCustomer()" type="button"
                                 class="btn btn-info btn-sm me-2">Editar</button>
+
+                            <button class="btn btn-primary" >Abrir Modal</button>
+
+                            <ng-template #content let-modal>
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="modal-basic-title">Título del Modal</h4>
+                                    <button type="button" class="close" aria-label="Close"
+                                        (click)="modal.dismiss('Cross click')">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Contenido del modal...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        (click)="modal.close('Close click')">Cerrar</button>
+                                </div>
+                            </ng-template>
+
+
+
                             <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
                         </div>
                     </td>
